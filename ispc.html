@@ -1947,10 +1947,14 @@ int&lt;4&gt; bat = foo;    // ERROR: different vector lengths
 float&lt;4&gt; bing = foo; // ERROR: different vector lengths
 </pre>
 <p>For convenience, short vectors can be initialized with a list of individual
-element values:</p>
+element values. There are two mechanisms to achieve this:</p>
 <pre class="literal-block">
 float x = ..., y = ..., z = ...;
 float&lt;3&gt; pos = { x, y, z };
+</pre>
+<pre class="literal-block">
+float x = ..., y = ..., z = ...;
+float&lt;3&gt; pos = float&lt;3&gt; ( x, y, z );
 </pre>
 <p>There are two mechanisms to access the individual elements of these short
 vector data types.  The first is with the array indexing operator:</p>
